@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl3.css">
+    <title>Stacja Paliw</title>
+</head>
+<body>
+    <div class="gora">
+        <div class="baner-lewy">
+            <h1>Stacja Paliw</h1>
+        </div>
+        <div class="baner-prawy">
+            <a href="stacja.html"><img src="home.png"></a>
+            <a href="obliczenia.html"><img src="znak.png"></a>
+        </div>
+    </div>
+    <div class="glowny">
+        <h3>Oblicz koszt paliwa</h3>
+        <form>
+            Rodzaj paliwa (1-benzyna, 2-olej napędowy):
+            <br>
+            <input id="rodzaj" type="number">
+            <br>
+            Ile litrów
+            <br>
+            <input id="litry" type="number">
+            <br>
+            <button type="button" onclick="oblicz()">Oblicz</button>
+            <p id="obliczanie"></p>
+        </form>
+    </div>
+    <div class="dol">
+        <div class="blok-lewy">
+            <a class="odnosnik" href="kwerendy.txt" download>Pobierz kwerendy</a>
+        </div>
+        <div class="blok-prawy">
+            <img class="samochod"src="samochod.png" alt="samochód">
+        </div>
+    </div>
+    <div class="stopka">
+        <p>Stronę opracował: 000000000000</p>
+    </div>
+    <script>
+
+    function oblicz(){
+
+    var rodzaj = document.getElementById('rodzaj').value;
+    var litry = document.getElementById('litry').value;
+    rodzaj = parseInt(rodzaj);
+    litry = parseInt(litry);
+    var wynik = 0;
+    switch(rodzaj) {
+        case 1:
+            wynik = 4*litry;
+            break;
+        case 2:
+            wynik = 3.5 * litry;
+            break;
+        default:
+            wynik = 0;
+            break;
+    }
+
+    document.getElementById('obliczanie').innerHTML = "koszt paliwa: " + wynik + " zł";
+}
+    </script>
+</body>
+</html>
